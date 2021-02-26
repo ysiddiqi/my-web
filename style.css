@@ -12,6 +12,10 @@ body {
   /* Optional */
   position: sticky;
   top: 0;
+  z-index: 1;
+  
+  
+
 }
 /* Hide Hamburger */
 #hamnav label, #hamburger { 
@@ -64,22 +68,29 @@ body {
 /* home section */
 .container-home{
     max-width: 100%;
-    height: 1200px;
+    height: 100vh;
     position: relative;
+}
+.heading{
+  color:#FFFFFF;
+  padding-top: 50px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .container-home img{
     width: 100%;
+    height: 100vh;
     background-size: 100%;
 
 }
 .centered {
     color: white;
-    text-shadow: 4px 4px 6px #000000;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     font-size: 1rem;
     font-weight: bold;
     position: absolute;
-    top: 15%;
+    top: 25%;
     left: 60%;
     transform: translate(-50%, -50%);
   }
@@ -92,7 +103,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     position: absolute;
-    top: 45%;
+    top: 80%;
     left: 65%;
     transform: translate(-50%, -50%);
   }
@@ -120,11 +131,6 @@ body {
     transition: 0.5s;
   }
   .topright span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
     transition: 0.5s;
   }
   .topright:hover span {
@@ -150,4 +156,427 @@ body {
     padding: 10x;
   }
   
+}
+.container-fluid {
+  /* display: block; */
+  width: 100%;
+  height: 1000px;
+  background-color: #a7cfdf;
+
+  
+}
+ /* .container-tech img{ 
+    width: 500px; 
+   height: 300px;
+   margin: 50px;
+   border: 1px solid #f1f1f1;
+ 
+ /* } */
+ .flip-box {
+  background-color: transparent;
+  margin: 50px auto;
+  width: 500px;
+  height: 300px;
+  border: 2px solid #f1f1f1;
+  perspective: 1000px;
+}
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+  transition-delay: 3s;
+}
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+@media screen and (max-width: 768px){
+.container-fluid{
+  height: 1800px;
+  background-color: #a7cfdf;
+}
+}
+
+.container-about{
+  width: 100%;
+  height: 1000px;
+  background-color: rgb(231, 199, 139);
+  
+}
+.container-about p{
+  text-align: center;
+  color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+ 
+.res-sphere {
+  /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
+  margin: 100px auto;
+  /* margin-left: 80px; */
+  padding-top: 30px;
+  position: relative;
+  width: 80%;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a7cfdf 0%,#23538a 100%);
+  box-shadow: inset -12px -10px 8px 0px rgba(0,0,0,0.3);
+}
+.res-sphere{
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+ 
+/* (C) MATCH HEIGHT */
+.res-sphere:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+@keyframes bounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+}
+.res-sphere:hover{
+   animation-play-state: paused;
+  
+}
+/* (E) TEXT BLOCK */
+.circle-txt  {
+  /* (E1) CENTER TEXT IN CIRCLE */
+  text-align: center;
+  padding-top: 35px;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+ 
+  /* (E2) THE FONT - NOT REALLY IMPORTANT */
+  font-family: arial, sans-serif;
+  font-size: 1.5rem;
+  color:#FFFFFF;
+  
+}
+
+/* (A) HIDE DEFAULT CHECKBOX */
+.toggle input { display: none; }
+
+/* (B) TOGGLE BUTTON WRAPPER */
+.toggle {
+  position: absolute;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  margin: 230px 125px;
+ 
+  
+}
+
+/* (C) CUSTOM TOGGLE BUTTON "OUTSIDE BOX" */
+.slider {
+  /* (C1) FULLY FILL  CONTAINER */
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  /* (C2) COSMETIC STYLES */
+  cursor: pointer;
+  border: 2px solid #ffff;
+  border-radius: 10px;
+  background-color: linear-gradient(135deg, #a7cfdf 0%,#23538a 100%);
+}
+
+/* (D) CUSTOM TOGGLE BUTTON "INSIDE SLIDER BUTTON" */
+.slider::before {
+  /* (D1) FILL UP HALF OF  CONTAINER */
+  content: "";
+  width: 50%;
+  height: 100%;
+  /* (D2) DEFAULT BUTTON POSITION - LEFT */
+  position: absolute;
+  top: 0; left: 0;
+  /* (D3) COSMETIC STYLES */
+  background-color: #eee;
+}
+
+/* (E) ON CHECKED (SWITCHED ON) */
+/* (E1) MAGIC CSS SLIDING ANIMATION */
+.slider, .slider::before { transition: all 0.2s; }
+/* (E2) TURN GREEN */
+.toggle input:checked + .slider {
+  border: 2px solid #258805;
+  background-color: black;
+}
+/* (E3) MOVE SLIDER BUTTON TO RIGHT */
+.toggle input:checked + .slider::before { left: 50%; }
+/* (F) OFF INDICATOR */
+.slider::after {
+  /* (F1) FILL UP HALF OF  CONTAINER */
+  width: 50%;
+  height: 100%;
+  /* (F2) DEFAULT POSITION - RIGHT */
+  position: absolute;
+  top: 0; left: 50%;
+  /* (F3) "OFF" TEXT */
+  content: "O";
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}
+
+/* (G) ON INDICATOR */
+.toggle input:checked + .slider::after {
+  content: "I";
+  left: 0;
+}
+  .bounce-ball{
+  width: 60px;
+  height: 20px;
+  margin: 350px 10px;
+  border-radius: 50%;
+  animation-name: ball;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  background-color: tomato;
+  position:relative;
+}
+@keyframes ball{
+  0% {
+    margin-left: 0%;
+    background-color:rgb(131, 19, 121);
+  }
+  50% {
+    margin-left: 400px;
+    background-color: yellow;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+.container-game{
+  width: 100%;
+  height: 1500px;
+}
+.container-game .content{
+  margin-top: 50px;
+}
+
+.smartphone {
+  
+  position: relative;
+  width: 380px;
+  height: 650px;
+  margin: 50px auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+.smartphone .content {
+  width: 340px;
+  height: 450px;
+  background: white;
+}
+/* The device with borders */
+.tablet {
+  position: relative;
+  width: 580px;
+  height: 650px;
+  margin: 50px auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+/* The horizontal line on the top of the device */
+.tablet:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+/* The circle on the bottom of the device */
+.tablet:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+/* The screen (or content) of the device */
+.tablet .content {
+  width: 550px;
+  height: 550px;
+  background: white;
+  margin: -1px;
+}
+/* The laptop with borders */
+.laptop {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: absolute;
+  width: 1366px;
+  height: 800px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: black;
+  border-width: 24px 24px 80px;
+  background-color: black;
+
+}
+/* The keyboard of the laptop */
+.laptop:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: black;
+  border-radius: 6px;
+}
+/* The top of the keyboard */
+.laptop:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: #f1f1f1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+/* The screen (or content) of the device */
+.laptop .content {
+  width: 1320px;
+  height: 700px;
+  overflow: hidden;
+  border: none;
+}
+/* user ratings */
+.user-rating{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+.heading {
+  font-size: 25px;
+  margin-right: 25px;
+  color:#FFFFFF;
+}
+
+.fa {
+  font-size: 35px;
+}
+.checked {
+  color: orange;
+}
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+/* Place text to the right */
+.right {
+  text-align: right;
+  /* margin-right: 20px; */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* The bar container */
+.bar-container {
+  width: 70%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+/* Individual bars */
+.bar-5 {width: 90%; height: 18px; background-color: #4CAF50;}
+.bar-4 {width: 70%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 40%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 10%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 5%; height: 18px; background-color: #f44336;}
+
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
 }
